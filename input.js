@@ -13,7 +13,7 @@ const setupInput = (conn) => {
   stdin.resume();
 
   const handleUserInput = (key) => {
-    process.stdout.write('Input: ');
+    process.stdout.write('.');
     if (key === '\u0003') {
       process.exit();
     } if (key === 'w') {
@@ -24,6 +24,8 @@ const setupInput = (conn) => {
       conn.write(a);
     } if (key === 'd') {
       conn.write(d);
+    } if (key === 'i') {
+      conn.write("Say: Hello");
     }
   };
   stdin.on("data", handleUserInput);
