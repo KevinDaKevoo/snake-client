@@ -10,16 +10,14 @@ const connect = function () {
   });
   // interpret incoming data as text
   conn.setEncoding("utf8");
+
+  const name = "Kev"
+  conn.write(`Name: ${name}`)
+
   conn.on('data', (data) => {
   console.log(data);
 })
-  const name = "Kev"
-  conn.write(`Name: ${name}`)
   return conn;
 };
-
-console.log("Connecting ...");
-connect();
-
 
 module.exports = { connect };
